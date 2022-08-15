@@ -1,1 +1,1 @@
-# project_1_crashkurs_r
+# Projekt 1 - Crashkurs R
