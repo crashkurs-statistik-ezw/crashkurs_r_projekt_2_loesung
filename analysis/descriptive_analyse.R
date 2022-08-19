@@ -66,6 +66,7 @@ student_data %>%                   ## Klammern und neuen variabennamen ausfülle
 # * Untersuche auch, wie sich Probanden aus kleinen und größeren Familien in ihrer
 #   durchschnittlichen Mathenote unterscheiden. Erstelle dafür zunächst eine neue
 #   Variable mit Hilfe der Funktion mutate und speichere den Output ab.
+# * Haben Schüler*innen aus kleinen Familien bessere Noten?
 student_data <- student_mat %>%
   mutate(
     mean_grade = (G1 + G2 + G3)/ 3)
@@ -84,6 +85,7 @@ student_data %>%                  ##  nach group_by selber ausfüllen lassen
 #   das Geschlecht beachtet. 
 # * Nutze position = "dodge", um die Balken nebeneinander zu reihen.
 # * Füge einen sinnvollen Titel, Achsen- und Legendentitel ein.
+# * Haben die männlichen Probanden bessere familiäre Bindungen als die weiblichen?
 ggplot(student_data, aes(x = famrel, fill = sex)) +     ## Titel selber bestimmen lassen
   geom_bar(position = "dodge") +
   labs(
@@ -95,7 +97,9 @@ ggplot(student_data, aes(x = famrel, fill = sex)) +     ## Titel selber bestimme
 
 # * Erstelle ein weiteres aneinandergereihtes Balkendiagramm mit dem Bildungslevel
 #   der Mütter auf der x-Achse und deren Beschäftigungsstatus. 
-# * Erstelle dafür eine neue bedingt Variable mit Hilfe von case_when.
+# * Erstelle dafür eine neue bedingte Variable mit Hilfe von case_when.
+# * Unterscheiden sich die arbeitenden Mütter von den nicht arbeitenden Mütter
+#   in ihrem Bildungslevel?
 student_data <- student_data %>%       ## nach case_when selber ausfüllen lassen
   mutate(
     working_mother = case_when(
