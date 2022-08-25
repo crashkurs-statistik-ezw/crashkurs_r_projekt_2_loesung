@@ -41,18 +41,18 @@ student_data_cleaned %>%
   count(sex)
 
 # 1.2.1
-# * Bestimme die Spannweite und den Mittelwert des Alters aller Proband*innen
+# * Bestimme die Spannweite und den Mittelwert des Alters aller SuS
 range(student_data_cleaned$age)
 mean(student_data_cleaned$age, na.rm = TRUE)
 
 # 1.2.2
-# * Wie viele Proband*innen leben in Familien mit mehr als drei und wieviele mit
+# * Wie viele SuS leben in Familien mit mehr als drei und wieviele mit
 #   weniger oder gleich drei Familienmitgliedern?
 student_data_cleaned %>%
   count(famsize)
 
 # 1.2.3
-# * Vergleiche, inwieweit sich die Probanden in der Qualitaet ihrer familiaeren 
+# * Vergleiche, inwieweit sich die SuS in der Qualitaet ihrer familiaeren 
 #   Bindungen unterscheiden, wenn ihre Eltern zusammen oder getrennt leben.  
 # * Berechne den Mittelwert für beide Gruppen der Variable pstatus mit 
 #   den Funktionen group_by und fasse sie zusammen.
@@ -63,9 +63,9 @@ student_data_cleaned %>%
   )
 
 # 1.2.4
-# * Untersuche, wie sich Probanden aus kleinen und groeßeren Familien in 
+# * Untersuche, wie sich SuS aus kleinen und groeßeren Familien in 
 #   ihrer durchschnittlichen Mathenote unterscheiden. 
-# * Haben Schueler*innen aus kleinen Familien bessere Noten?
+# * Haben SuS aus kleinen Familien bessere Noten?
 student_data_cleaned %>%
   group_by(famsize) %>%
   summarise(
@@ -78,13 +78,12 @@ student_data_cleaned %>%
 # 1.3.0
 # Untersuche den Datensatz mit Hilfe eines Balkendiagramms
 # * Erstelle ein aneinandergereihtes Balkendiagramm, das die Verteilung der 
-#   Probanden auf die verschiedenen Level von familiaerer Bindungsqualitaet d
+#   SuS auf die verschiedenen Level von familiaerer Bindungsqualitaet d
 #   auf der X-Achse darstellt und das Geschlecht durch die Farbe der 
 #   Balken kennzeichnet
 # * Nutze position = position_dodge(), um die Balken nebeneinander zu reihen.
 # * Füge sinnvolle Achsen- und Legendentitel hinzu
-# * Haben die maennlichen Probanden bessere familiaere Bindungen als die 
-#   weiblichen?
+# * Haben die Schueler bessere familiaere Bindungen als Schuelerinnen?
 ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
   geom_bar(position = position_dodge()) +
   labs(
@@ -97,9 +96,8 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
 
 
 # 1.3.1
-# * Erstelle ein aneinandergereihtes Balkendiagramm mit dem 
-#   Bildungslevel der Muetter auf der x-Achse und deren Beschaeftigungsstatus
-#   auf der Y-Achse.
+# * Erstelle ein aneinandergereihtes Balkendiagramm mit dem Bildungslevel der 
+#   Muetter auf der x-Achse und deren Beschaeftigungsstatus auf der Y-Achse.
 # * Erstelle  eine neue bedingte Variable mit Hilfe von case_when.
 # * Unterscheiden sich die arbeitenden Muetter von den nicht arbeitenden 
 #   Muettern in ihrem Bildungslevel?
@@ -121,8 +119,8 @@ student_data_cleaned %>%
 
 
 # 1.3.2
-# Speichere beide Visualisierungen im R-Projekt ab unter dem Pfad
-# images/barbplot_mothers_education_status.png
+# * Speichere beide Visualisierungen im R-Projekt ab unter dem Pfad
+#   images/barbplot_mothers_education_status.png
 ggsave("images/barbplot_mothers_education_status.png",
        dpi = 300)
 
@@ -137,7 +135,7 @@ write_csv(student_data_cleaned, "data/export/student_data_cleaned.csv")
 
 
 # 1.4.1
-# Um die Daten in SPSS zu nutzen, exportiere den gereinigten Datensatz mit der
-# Funktion write_sav
-# Speichere die Daten unter data/export/student_data_cleaned.sav
+# * Um die Daten in SPSS zu nutzen, exportiere den gereinigten Datensatz mit der
+#   Funktion write_sav
+# * Speichere die Daten unter data/export/student_data_cleaned.sav
 write_sav(student_data_cleaned, "data/export/student_data_cleaned.sav")
