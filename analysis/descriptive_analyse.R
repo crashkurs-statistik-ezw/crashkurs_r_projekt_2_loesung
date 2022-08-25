@@ -52,10 +52,10 @@ student_data_cleaned %>%
   count(famsize)
 
 # 1.2.3
-# Vergleiche, inwieweit sich die Probanden in der Qualität ihrer familiären 
-# Bindungen unterscheiden, wenn ihre Eltern zusammen oder getrennt leben.  
-# Berechne den Mittelwert für beide Gruppen der Variable pstatus mit 
-# den Funktionen group_by und fassen Sie zusammen.
+# * Vergleiche, inwieweit sich die Probanden in der Qualitaet ihrer familiaeren 
+#   Bindungen unterscheiden, wenn ihre Eltern zusammen oder getrennt leben.  
+# * Berechne den Mittelwert für beide Gruppen der Variable pstatus mit 
+#   den Funktionen group_by und fasse sie zusammen.
 student_data_cleaned %>%
   group_by(pstatus) %>%
   summarise(
@@ -63,9 +63,9 @@ student_data_cleaned %>%
   )
 
 # 1.2.4
-# Untersuche, wie sich Probanden aus kleinen und größeren Familien in 
-# ihrer durchschnittlichen Mathenote unterscheiden. 
-# Haben Schüler*innen aus kleinen Familien bessere Noten?
+# * Untersuche, wie sich Probanden aus kleinen und groeßeren Familien in 
+#   ihrer durchschnittlichen Mathenote unterscheiden. 
+# * Haben Schueler*innen aus kleinen Familien bessere Noten?
 student_data_cleaned %>%
   group_by(famsize) %>%
   summarise(
@@ -78,12 +78,12 @@ student_data_cleaned %>%
 # 1.3.0
 # Untersuche den Datensatz mit Hilfe eines Balkendiagramms
 # * Erstelle ein aneinandergereihtes Balkendiagramm, das die Verteilung der 
-#   Probanden auf die verschiedenen Level von familiärer Bindungsqualität d
+#   Probanden auf die verschiedenen Level von familiaerer Bindungsqualitaet d
 #   auf der X-Achse darstellt und das Geschlecht durch die Farbe der 
 #   Balken kennzeichnet
 # * Nutze position = position_dodge(), um die Balken nebeneinander zu reihen.
-# * Füge einen sinnvolle Achsen- und Legendentitel hinzu
-# * Haben die männlichen Probanden bessere familiäre Bindungen als die 
+# * Füge sinnvolle Achsen- und Legendentitel hinzu
+# * Haben die maennlichen Probanden bessere familiaere Bindungen als die 
 #   weiblichen?
 ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
   geom_bar(position = position_dodge()) +
@@ -98,11 +98,11 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
 
 # 1.3.1
 # * Erstelle ein aneinandergereihtes Balkendiagramm mit dem 
-#   Bildungslevel der Mütter auf der x-Achse und deren Beschäftigungsstatus
+#   Bildungslevel der Muetter auf der x-Achse und deren Beschaeftigungsstatus
 #   auf der Y-Achse.
 # * Erstelle  eine neue bedingte Variable mit Hilfe von case_when.
-# * Unterscheiden sich die arbeitenden Mütter von den nicht arbeitenden Mütter
-#   in ihrem Bildungslevel?
+# * Unterscheiden sich die arbeitenden Muetter von den nicht arbeitenden 
+#   Muettern in ihrem Bildungslevel?
 student_data_cleaned %>%
   mutate(
     working_mother = case_when(
@@ -117,7 +117,7 @@ student_data_cleaned %>%
     y     = "Anzahl",
     fill  = "Working mother"
   ) +
-  scale_y_continuous(expand = expansion(0)) 
+  scale_y_continuous(expand = expansion(0))
 
 
 # 1.3.2
