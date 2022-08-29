@@ -92,10 +92,17 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
     fill  = "Geschlecht"
   ) +
   scale_y_continuous(expand = expansion(0)) +
-  scale_fill_viridis_d(option = "cividis")
+  scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
 # 1.3.1
+# Speichere beide Visualisierungen im R-Projekt ab unter dem Pfad
+# images/barbplot_mothers_education_status.png
+ggsave("images/verteilung_bildungsqualitaet_geschlecht.png",
+       width = 8, height = 5, dpi = 300)
+
+
+# 1.3.2
 # * Erstelle ein aneinandergereihtes Balkendiagramm mit dem Bildungslevel der 
 #   Muetter auf der x-Achse und deren Beschaeftigungsstatus auf der Y-Achse.
 # * Erstelle  eine neue bedingte Variable mit Hilfe von case_when.
@@ -115,15 +122,15 @@ student_data_cleaned %>%
     y     = "Anzahl",
     fill  = "Working mother"
   ) +
-  scale_y_continuous(expand = expansion(0))
+  scale_y_continuous(expand = expansion(0)) +
+  scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
-# 1.3.2
-# * Speichere beide Visualisierungen im R-Projekt ab unter dem Pfad
-#   images/barbplot_mothers_education_status.png
-ggsave("images/barbplot_mothers_education_status.png",
-       dpi = 300)
-
+# 1.3.3
+# Speichere beide Visualisierungen im R-Projekt ab unter dem Pfad
+# images/barbplot_mothers_education_status.png
+ggsave("images/barbplot_mothers_education_status.png", width = 8,
+       height = 5, dpi = 300)
 
 
 # 1.4 Datenexport ---------------------------------------------------------
