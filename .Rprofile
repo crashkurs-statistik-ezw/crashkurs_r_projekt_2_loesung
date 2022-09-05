@@ -18,7 +18,7 @@
     axis.ticks = element_line(size = .5),
     panel.grid = element_blank(),
     legend.position = c(0.20, 0.8),
-    legend.background = element_rect(color = "black", size = 0.2),
+    legend.background = element_rect(color = "black", size = 0.5),
     legend.text = element_text(size = 15),
     legend.margin = margin(t = 5, l = 5, r = 5, b = 5),
     legend.key = element_rect(color = NA, fill = NA)
