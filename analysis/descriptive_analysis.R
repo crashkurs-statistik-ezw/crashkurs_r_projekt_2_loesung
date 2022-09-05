@@ -1,27 +1,3 @@
-<<<<<<< HEAD:analysis/datenanalyse.R
-library(tidyverse)
-library(haven)
-
-
-student_data_cleaned <- read_csv("data/export/student_data_cleaned.csv")
-
-
-# 1.2 Daten explorieren  ------------------------------------------------
-
-# 1.2.0
-# Wie viele Maenner und Frauen sind im Datensatz?
-student_data_cleaned %>%
-  count(sex)
-
-# 1.2.1
-# Bestimme die Spannweite und den Mittelwert des Alters aller SuS
-range(student_data_cleaned$age)
-mean(student_data_cleaned$age, na.rm = TRUE)
-
-# 1.2.2
-# Wie viele SuS leben in Familien mit mehr als drei und wieviele mit
-# weniger oder gleich drei Familienmitgliedern?
-=======
 # 1.0 Daten explorieren  ------------------------------------------------
 
 # 1.0.0
@@ -37,7 +13,6 @@ mean(student_data_cleaned$age, na.rm = TRUE)
 # 1.0.2
 # * Wie viele SuS leben in Familien mit mehr als drei und wieviele mit
 #   weniger oder gleich drei Familienmitgliedern?
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
 student_data_cleaned %>%
   count(famsize)
 
@@ -85,15 +60,9 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
   scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
-<<<<<<< HEAD:analysis/datenanalyse.R
-# 1.3.1
-# Speichere die Visualisierungen im R-Projekt ab unter dem Pfad
-# images/verteilung_bildungsqualitaet_geschlecht.png
-=======
 # 1.1.1
 # Speichere die Visualisierung im R-Projekt ab unter dem Pfad
 # images/barbplot_mothers_education_status.png
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
 ggsave("images/verteilung_bildungsqualitaet_geschlecht.png",
        width = 8, height = 5, dpi = 300)
 
@@ -122,17 +91,8 @@ student_data_cleaned %>%
   scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
-<<<<<<< HEAD:analysis/datenanalyse.R
-# 1.3.3
-# Speichere die Visualisierungen im R-Projekt ab unter dem Pfad
-# images/barbplot_mothers_education_status.png
-ggsave("images/barbplot_mothers_education_status.png", width = 8,
-       height = 5, dpi = 300)
-
-=======
 # 1.1.3
 # Speichere die Visualisierung im R-Projekt ab unter dem Pfad
 # images/barbplot_mothers_education_status.png
 ggsave("images/barbplot_mothers_education_status.png", width = 8,
        height = 5, dpi = 300)
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
