@@ -1,47 +1,22 @@
-<<<<<<< HEAD:analysis/datenanalyse.R
-library(tidyverse)
-library(haven)
+# 2.4 Daten explorieren  ------------------------------------------------
 
-
-student_data_cleaned <- read_csv("data/export/student_data_cleaned.csv")
-
-
-# 1.2 Daten explorieren  ------------------------------------------------
-
-# 1.2.0
-# Wie viele Maenner und Frauen sind im Datensatz?
-student_data_cleaned %>%
-  count(sex)
-
-# 1.2.1
-# Bestimme die Spannweite und den Mittelwert des Alters aller SuS
-range(student_data_cleaned$age)
-mean(student_data_cleaned$age, na.rm = TRUE)
-
-# 1.2.2
-# Wie viele SuS leben in Familien mit mehr als drei und wieviele mit
-# weniger oder gleich drei Familienmitgliedern?
-=======
-# 1.0 Daten explorieren  ------------------------------------------------
-
-# 1.0.0
+# 2.4.0
 # * Wie viele Maenner und Frauen sind im Datensatz?
 student_data_cleaned %>%
   count(sex)
 
-# 1.0.1
+# 2.4.1
 # * Bestimme die Spannweite und den Mittelwert des Alters aller SuS
 range(student_data_cleaned$age)
 mean(student_data_cleaned$age, na.rm = TRUE)
 
-# 1.0.2
+# 2.4.2
 # * Wie viele SuS leben in Familien mit mehr als drei und wieviele mit
 #   weniger oder gleich drei Familienmitgliedern?
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
 student_data_cleaned %>%
   count(famsize)
 
-# 1.0.3
+# 2.4.3
 # * Vergleiche, inwieweit sich die SuS in der Qualitaet ihrer familiaeren 
 #   Bindungen unterscheiden, wenn ihre Eltern zusammen oder getrennt leben.  
 # * Berechne den Mittelwert für beide Gruppen der Variable pstatus mit 
@@ -52,7 +27,7 @@ student_data_cleaned %>%
     mean_famrel = mean(famrel)
   )
 
-# 1.0.4
+# 2.4.4
 # * Untersuche, wie sich SuS aus kleinen und groeßeren Familien in 
 #   ihrer durchschnittlichen Mathenote unterscheiden. 
 # * Haben SuS aus kleinen Familien bessere Noten?
@@ -63,9 +38,9 @@ student_data_cleaned %>%
   )
 
 
-# 1.1 Daten visualisieren -----------------------------------------------------
+# 2.5 Daten visualisieren -----------------------------------------------------
 
-# 1.1.0
+# 2.5.0
 # Untersuche den Datensatz mit Hilfe eines Balkendiagramms
 # * Erstelle ein aneinandergereihtes Balkendiagramm, das die Verteilung der 
 #   SuS auf die verschiedenen Level von familiaerer Bindungsqualitaet d
@@ -85,20 +60,14 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
   scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
-<<<<<<< HEAD:analysis/datenanalyse.R
-# 1.3.1
-# Speichere die Visualisierungen im R-Projekt ab unter dem Pfad
-# images/verteilung_bildungsqualitaet_geschlecht.png
-=======
-# 1.1.1
+# 2.5.1
 # Speichere die Visualisierung im R-Projekt ab unter dem Pfad
 # images/barbplot_mothers_education_status.png
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
 ggsave("images/verteilung_bildungsqualitaet_geschlecht.png",
        width = 8, height = 5, dpi = 300)
 
 
-# 1.1.2
+# 2.5.2
 # * Erstelle ein aneinandergereihtes Balkendiagramm mit dem Bildungslevel der 
 #   Muetter auf der x-Achse und deren Beschaeftigungsstatus auf der Y-Achse.
 # * Erstelle  eine neue bedingte Variable mit Hilfe von case_when.
@@ -122,17 +91,8 @@ student_data_cleaned %>%
   scale_fill_viridis_d(option = "cividis", begin = 0.3, end = 0.9)
 
 
-<<<<<<< HEAD:analysis/datenanalyse.R
-# 1.3.3
-# Speichere die Visualisierungen im R-Projekt ab unter dem Pfad
-# images/barbplot_mothers_education_status.png
-ggsave("images/barbplot_mothers_education_status.png", width = 8,
-       height = 5, dpi = 300)
-
-=======
-# 1.1.3
+# 2.5.3
 # Speichere die Visualisierung im R-Projekt ab unter dem Pfad
 # images/barbplot_mothers_education_status.png
 ggsave("images/barbplot_mothers_education_status.png", width = 8,
        height = 5, dpi = 300)
->>>>>>> 78f7c4d5297542353992735d159ee5d9f65f5624:analysis/descriptive_analysis.R
