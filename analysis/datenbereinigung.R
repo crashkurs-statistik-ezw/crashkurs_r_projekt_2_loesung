@@ -38,7 +38,7 @@ student_data_cleaned <- student_data %>%
 
 # 2.4.1
 # * Exportiere den Datensatz in den Ordner data/cleaned
-# * Speichere die Daten unter data/export/student_data_cleaned.csv
+# * Speichere die Daten unter data/cleaned/student_data_cleaned.csv
 write_csv(student_data_cleaned, "data/export/student_data_cleaned.csv")
 
 
