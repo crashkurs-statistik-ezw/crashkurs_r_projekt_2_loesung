@@ -39,11 +39,11 @@ student_data_cleaned <- student_data %>%
 # 2.4.1
 # * Exportiere den Datensatz in den Ordner data/cleaned
 # * Speichere die Daten unter data/cleaned/student_data_cleaned.csv
-write_csv(student_data_cleaned, "data/export/student_data_cleaned.csv")
+write_csv(student_data_cleaned, "data/cleaned/student_data_cleaned.csv")
 
 
 # 2.4.2
 # * Um die Daten in SPSS zu nutzen, exportiere den gereinigten Datensatz mit der
 #   Funktion write_sav
-# * Speichere die Daten unter data/export/student_data_cleaned.sav
-write_sav(student_data_cleaned, "data/export/student_data_cleaned.sav")
+# * Speichere die Daten unter data/cleaned/student_data_cleaned.sav
+write_sav(student_data_cleaned, "data/cleaned/student_data_cleaned.sav")
