@@ -63,8 +63,8 @@ ggplot(student_data_cleaned, aes(x = famrel, fill = sex)) +
 
 # 2.6.2 Visualisierung speichern
 # Speichere die Visualisierung im R-Projekt ab unter dem Pfad
-# images/barbplot_mothers_education_status.png
-ggsave("images/verteilung_bildungsqualitaet_geschlecht.png",
+# images/verteilung_bindungsqualitaet_geschlecht.png
+ggsave("images/verteilung_bindungsqualitaet_geschlecht.png",
        width = 8, height = 5, dpi = 300)
 
 
