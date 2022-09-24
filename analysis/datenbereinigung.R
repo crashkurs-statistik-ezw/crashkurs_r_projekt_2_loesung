@@ -4,6 +4,7 @@
 library(janitor)
 library(haven)
 
+
 # 2.2 Daten einlesen ------------------------------------------------------
 
 # 2.2.1
